@@ -2,10 +2,24 @@
 
 <head>
     <title>тест</title>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
 </head>
 
 <body>
     <p>тест</p>
+    
+    <script>
+        Email.send({
+            Host : "smtp.elasticemail.com",
+            Username : "p.294803@gmail.com",
+            Password : "",
+            To : 'p-294803@yandex.ru',
+            From : "p.294803@gmail.com",
+            Subject : "This is the subject",
+            Body : "And this is the body"
+        }).then(message => alert(message));
+    </script>
+    
 </body>
 
 

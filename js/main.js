@@ -4,4 +4,4 @@ Email.send({
   From : "p.294803@gmail.com",
   Subject : "This is the subject",
   Body : "fuck"
-}).then(message => alert(message));
+}).then(message => console.log(message));

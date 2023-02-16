@@ -1,0 +1,13 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+      Full-stack developer, designer: Dan Sazonov
+      Contact: https://vk.com/dan_sazonov
+      Github: @dan-sazonov
+
+# TECHNOLOGY COLOPHON
+
+    CSS3, HTML5
+    Apache Server Configs, jQuery, Modernizr, Normalize.css

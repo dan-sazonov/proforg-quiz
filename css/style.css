@@ -6,6 +6,29 @@
   height: 100vh;
 }
 
+.steps span {
+  margin-right: 1em !important;
+}
+
+.text-title {
+  font-weight: bold;
+  margin-bottom: 1em !important;
+}
+
+.text-sup{
+  text-align: center;
+  font-size: smaller;
+}
+
+.active {
+  font-weight: bold;
+  color: #c55083;
+}
+
+.timer {
+  text-align: center;
+}
+
 footer {
   text-align: center;
   color: #555555;

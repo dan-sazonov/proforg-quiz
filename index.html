@@ -45,7 +45,8 @@
     <div class="step0" id="startSlide">
       <h2>Привет!</h2>
       <p>Пройди, пожалуйста, небольшой тест по материалам лекции.</p>
-      <p>На выполнение у тебя будет 10 минут. Если ты не уложишься, ответ записан не будет. Желаем удачи)</p>
+      <p>На выполнение у тебя будет 10 минут. Если ты не уложишься, ответ записан не будет. Будь внимателен: учти, ты не
+        сможешь вернуться к предыдущим вопросам. Желаем удачи)</p>
       <form class="d-flex flex-column justify-content-between align-items-center">
         <button type="button" class="btn btn-primary" id="startBtn">Поехали!</button>
       </form>
@@ -66,16 +67,18 @@
           id="it10">10</span>
         </div>
 
-        <p class="timer">До завершения теста осталось: <span id="minutes" class="font-weight-bold"> </span>:<span id="seconds" class="font-weight-bold"> </span></p>
+        <p class="timer">До завершения теста осталось: <span id="minutes" class="font-weight-bold"> </span>:<span
+          id="seconds" class="font-weight-bold"> </span></p>
         <div class="d-flex flex-column justify-content-center">
-        <button type="button" class="btn btn-success mr-4" id="nextBtn">Далее</button>
+          <button type="button" class="btn btn-success mr-4" id="nextBtn">Далее</button>
         </div>
       </div>
     </div>
 
     <div class="step11" id="finishSlide" hidden>
       <h2 class="mb-5">Спасибо за прохождение!</h2>
-      <p>Ты справился за <span id="minRez"></span>:<span id="secRez"></span>, твой результат: <b><span id="quizRez">10</span> <span id="quizRezLbl">баллов</span></b>
+      <p>Ты справился за <span id="minRez"></span>:<span id="secRez"></span>, твой результат: <b><span
+        id="quizRez">10</span> <span id="quizRezLbl">баллов</span></b>
       </p>
       <form class="d-flex flex-column justify-content-between" name="usr_data">
         <label for="nameData">Как тебя зовут?</label><input class="formData" type="text" id="nameData"

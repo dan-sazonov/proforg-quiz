@@ -153,7 +153,6 @@ function startPolling() {
 
 // рендерим вопрос
 function rendQuestion(q) {
-  console.log(q)
   // пишем текст вопроса
   document.getElementById("ansText").innerHTML = q.question;
 
@@ -192,7 +191,6 @@ function nextQuestions() {
   if (answeredQuestions === 3) {
     // todo поменять на 10
     showResults();
-    sendResults();
   } else {
     answeredQuestions++;
     rendQuestion(allQuestions[answeredQuestions]);
@@ -216,6 +214,13 @@ function showResults() {
 }
 
 function sendResults() {
+  let form = document.forms.usr_data;
+  let usrData = {
+    name: form.elements.student_name.value,
+    group: form.elements.student_group.value,
+    score: usrScore
+  };
+
 // Email.send({
 //   SecureToken : "fa5cdb1d-dae7-4227-9afe-4568c372839c",
 //   To : 'p-294803@yandex.ru',
@@ -227,3 +232,5 @@ function sendResults() {
 
 nextBtn.addEventListener("click", checkAns, false);
 startBtn.addEventListener("click", startPolling, false);
+finishBtn.addEventListener("click", sendResults, false);
+

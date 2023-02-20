@@ -15,7 +15,7 @@
   margin-bottom: 1em !important;
 }
 
-.text-sup{
+.text-sup {
   text-align: center;
   font-size: smaller;
 }
@@ -35,5 +35,9 @@ footer {
 }
 
 ul {
-  padding-left: 1rem!important;
+  padding-left: 1rem !important;
+}
+
+.formData {
+  margin-bottom: 1rem !important;
 }

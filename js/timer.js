@@ -1,5 +1,6 @@
 const compareDate = new Date();
 // Time of countdown. Year, month, date, hours, minutes, seconds, ms
+const dateEntered = compareDate.setMinutes(compareDate.getMinutes() + 10, compareDate.getSeconds() + 40);
 
 const timer = setInterval(function () {
   timeBetweenDates(compareDate);
@@ -7,10 +8,8 @@ const timer = setInterval(function () {
 
 
 function timeBetweenDates(toDate) {
-  const dateEntered = toDate.setMinutes(50, 30);
-  console.log(dateEntered);
   const now = new Date();
-  const difference = new Date(dateEntered).getTime() - now.getTime();
+  const difference = new Date(toDate).getTime() - now.getTime();
 
   if (difference <= 0) {
     clearInterval(timer);

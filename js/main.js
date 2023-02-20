@@ -215,19 +215,24 @@ function showResults() {
 
 function sendResults() {
   let form = document.forms.usr_data;
-  let usrData = {
+  let textObj = {
     name: form.elements.student_name.value,
     group: form.elements.student_group.value,
     score: usrScore
   };
 
-// Email.send({
-//   SecureToken : "fa5cdb1d-dae7-4227-9afe-4568c372839c",
-//   To : 'p-294803@yandex.ru',
-//   From : "p.294803@gmail.com",
-//   Subject : "This is the subject",
-//   Body : "fuck"
-// }).then(message => console.log(message));
+  let tg = {
+    token: "6112219593:AAGrm2Rw9P142oEDuPzq09nOiLAVBIt4x8A", // охуенно плохая идея, знаю
+    chat_id: "385056286"
+  }
+
+  let text = `${textObj.name}, ${textObj.group}, ${textObj.score}`
+
+  const url = `https://api.telegram.org/bot${tg.token}/sendMessage?chat_id=${tg.chat_id}&text=${text}`;
+  console.log('start')
+  const xht = new XMLHttpRequest();
+  xht.open("GET", url);
+  xht.send();
 }
 
 nextBtn.addEventListener("click", checkAns, false);

@@ -131,10 +131,12 @@ let allQuestions = [
   }
 ];
 let answeredQuestions = [1,5,3,2];
-const startBtn = document.getElementById(startBtn);
-const nextBtn = document.getElementById(nextBtn);
-const finishBtn = document.getElementById(finishBtn);
-
+const startBtn = document.getElementById("startBtn");
+const nextBtn = document.getElementById("nextBtn");
+const finishBtn = document.getElementById("finishBtn");
+const startSlide = document.getElementById("startSlide");
+const quizSlide = document.getElementById("quizSlide");
+const finishSlide = document.getElementById("finishSlide");
 
 // дергаем 10 рандомных вопросов
 let myQuestions = [];
@@ -147,4 +149,13 @@ for (let i = 0 ; (i < 10) && (i < allQuestions.length) ; i++) {
   myQuestions.push(randQuestion);
 }
 
-console.log(myQuestions)
+// начинаем опрос
+function startPolling() {
+  startSlide.setAttribute("hidden", "");
+  quizSlide.removeAttribute("hidden");
+}
+startBtn.addEventListener("click", startPolling, false);
+
+
+
+console.log(myQuestions);

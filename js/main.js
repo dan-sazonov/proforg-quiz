@@ -250,8 +250,7 @@ function checkAns() {
 }
 
 function nextQuestions() {
-  if (answeredQuestions === 3) {
-    // todo поменять на 10
+  if (answeredQuestions === 9) {
     showResults();
   } else {
     answeredQuestions++;

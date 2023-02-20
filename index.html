@@ -41,12 +41,12 @@
     <img src="logo.png" alt="Логотип школы профоргов" class="img-fluid">
   </header>
 
-  <main>
+  <main class="d-flex justify-content-center">
     <div class="step0" id="startSlide">
       <h2>Привет!</h2>
       <p>Пройди, пожалуйста, небольшой тест по материалам лекции.</p>
       <p>На выполнение у тебя будет 10 минут. Если ты не уложишься, ответ записан не будет. Желаем удачи)</p>
-      <form class="d-flex flex-column justify-content-between">
+      <form class="d-flex flex-column justify-content-between align-items-center">
         <button type="button" class="btn btn-primary" id="startBtn">Поехали!</button>
       </form>
     </div>
@@ -67,7 +67,9 @@
         </div>
 
         <p class="timer">До завершения теста осталось: <span id="minutes" class="font-weight-bold"> </span>:<span id="seconds" class="font-weight-bold"> </span></p>
+        <div class="d-flex flex-column justify-content-center">
         <button type="button" class="btn btn-success mr-4" id="nextBtn">Далее</button>
+        </div>
       </div>
     </div>
 

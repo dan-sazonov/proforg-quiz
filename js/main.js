@@ -197,7 +197,8 @@ function nextQuestions() {
 }
 
 function showResults() {
-  console.log(usrScore);
+  quizSlide.setAttribute("hidden", "");
+  finishSlide.removeAttribute("hidden");
 }
 
 function sendResults() {

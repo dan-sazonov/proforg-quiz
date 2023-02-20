@@ -156,11 +156,12 @@ for (let i = 0; (i < 10) && (i < allQuestions.length); i++) {
 function startPolling() {
   startSlide.setAttribute("hidden", "");
   quizSlide.removeAttribute("hidden");
-  rendQuestion(allQuestions[answeredQuestions]);
+  rendQuestion(allQuestions[0]);
 }
 
 // рендерим вопрос
 function rendQuestion(q) {
+  console.log(q)
   // пишем текст вопроса
   document.getElementById("ansText").innerHTML = q.question;
 
@@ -190,7 +191,25 @@ function checkAns() {
   });
 
   if (isSame) {usrScore++}
-  answeredQuestions++;
+  nextQuestions();
+}
+
+function nextQuestions() {
+  if (answeredQuestions === 9) {
+    showResults();
+    sendResults();
+  } else {
+    answeredQuestions++;
+    rendQuestion(allQuestions[answeredQuestions]);
+  }
+}
+
+function showResults() {
+  console.log(usrScore);
+}
+
+function sendResults() {
+
 }
 
 nextBtn.addEventListener("click", checkAns, false);

@@ -14,7 +14,7 @@ let allQuestions = [
       b: "Sheryl Sandberg",
       c: "Brendan Eich"
     },
-    correctAnswer: "c",
+    correctAnswer: ["a"],
     type: "radio"
   },
   {
@@ -24,7 +24,7 @@ let allQuestions = [
       b: "TypeScript",
       c: "npm"
     },
-    correctAnswer: "c",
+    correctAnswer: ["a"],
     type: "radio"
   },
   {
@@ -35,7 +35,7 @@ let allQuestions = [
       c: "RequireJS",
       d: "ESLint"
     },
-    correctAnswer: "d",
+    correctAnswer: ["a"],
     type: "radio"
   },
   {
@@ -45,7 +45,7 @@ let allQuestions = [
       b: "Sheryl Sandberg",
       c: "Brendan Eich"
     },
-    correctAnswer: "c",
+    correctAnswer: ["a"],
     type: "radio"
   },
   {
@@ -55,7 +55,7 @@ let allQuestions = [
       b: "TypeScript",
       c: "npm"
     },
-    correctAnswer: "c",
+    correctAnswer: ["a"],
     type: "radio"
   },
   {
@@ -65,7 +65,7 @@ let allQuestions = [
       b: "Sheryl Sandberg",
       c: "Brendan Eich"
     },
-    correctAnswer: "c",
+    correctAnswer: ["a"],
     type: "radio"
   },
   {
@@ -75,7 +75,7 @@ let allQuestions = [
       b: "TypeScript",
       c: "npm"
     },
-    correctAnswer: "c",
+    correctAnswer: ["a"],
     type: "radio"
   },
   {
@@ -86,7 +86,7 @@ let allQuestions = [
       c: "RequireJS",
       d: "ESLint"
     },
-    correctAnswer: "d",
+    correctAnswer: ["a"],
     type: "radio"
   },
   {
@@ -96,7 +96,7 @@ let allQuestions = [
       b: "Sheryl Sandberg",
       c: "Brendan Eich"
     },
-    correctAnswer: "c",
+    correctAnswer: ["a"],
     type: "radio"
   },
   {
@@ -106,7 +106,7 @@ let allQuestions = [
       b: "TypeScript",
       c: "npm"
     },
-    correctAnswer: "c",
+    correctAnswer: ["a"],
     type: "radio"
   },
   {
@@ -116,7 +116,7 @@ let allQuestions = [
       b: "Sheryl Sandberg",
       c: "Brendan Eich"
     },
-    correctAnswer: "c",
+    correctAnswer: ["a"],
     type: "radio"
   },
   {
@@ -126,11 +126,14 @@ let allQuestions = [
       b: "TypeScript",
       c: "npm"
     },
-    correctAnswer: "c",
+    correctAnswer: ["a"],
     type: "radio"
   }
 ];
-let answeredQuestions = [1, 5, 3, 2];
+
+let answeredQuestions = 0;
+let usrScore = 0 ;
+
 const startBtn = document.getElementById("startBtn");
 const nextBtn = document.getElementById("nextBtn");
 const finishBtn = document.getElementById("finishBtn");
@@ -153,9 +156,8 @@ for (let i = 0; (i < 10) && (i < allQuestions.length); i++) {
 function startPolling() {
   startSlide.setAttribute("hidden", "");
   quizSlide.removeAttribute("hidden");
+  rendQuestion(allQuestions[answeredQuestions]);
 }
-
-startBtn.addEventListener("click", startPolling, false);
 
 // рендерим вопрос
 function rendQuestion(q) {
@@ -178,5 +180,18 @@ function rendQuestion(q) {
   document.getElementById("ansForm").innerHTML = quizForm;
 }
 
-rendQuestion(allQuestions[0])
-console.log(myQuestions);
+// проверяем ответ
+function checkAns() {
+  let usrAns = [];
+  document.querySelectorAll('input[name=ans]:checked').forEach(element => usrAns.push(element.id));
+
+  let isSame = (usrAns.length === allQuestions[answeredQuestions].correctAnswer.length) && usrAns.every(function(element, index) {
+    return element === allQuestions[answeredQuestions].correctAnswer[index];
+  });
+
+  if (isSame) {usrScore++}
+  answeredQuestions++;
+}
+
+nextBtn.addEventListener("click", checkAns, false);
+startBtn.addEventListener("click", startPolling, false);

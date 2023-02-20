@@ -162,16 +162,21 @@ function rendQuestion(q) {
   // пишем текст вопроса
   document.getElementById("ansText").innerHTML = q.question;
 
+  // пишем количество ответов
+  document.getElementById("ansSup").innerHTML = q.type === "checkbox" ? "Выбери все верные ответы" : "Выбери один верный ответ";
+
+  // пишем сами вопросы
   let quizForm = "";
   let ansNum = 0;
   for (let key of Object.keys(q.answers)) {
     ansNum++;
     quizForm += `<li class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="${key}">
+        <input class="form-check-input" type="${q.type}" value="" id="${key}" name="ans">
         <label class="form-check-label" for="${key}">${q.answers[key]}</label>
     </li>`;
   }
   document.getElementById("ansForm").innerHTML = quizForm;
 }
+
 rendQuestion(allQuestions[0])
 console.log(myQuestions);

@@ -216,7 +216,7 @@ function showResults() {
   let label = '';
   if (usrScore === 1) {
     label = "балл"
-  } else if (label >= 2 && label <= 4) {
+  } else if (usrScore >= 2 && usrScore <= 4) {
     label = "балла"
   } else {
     label = "баллов"
@@ -240,7 +240,6 @@ function sendResults() {
   let text = `${textObj.name}, ${textObj.group}, ${textObj.score}`
 
   const url = `https://api.telegram.org/bot${tg.token}/sendMessage?chat_id=${tg.chat_id}&text=${text}`;
-  console.log('start')
   const xht = new XMLHttpRequest();
   xht.open("GET", url);
   xht.send();

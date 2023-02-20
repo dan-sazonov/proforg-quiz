@@ -200,8 +200,14 @@ function nextQuestions() {
 }
 
 function showResults() {
+  const curMin = document.getElementById("minutes").innerHTML;
+  const curSec = document.getElementById("seconds").innerHTML;
+
   quizSlide.setAttribute("hidden", "");
   finishSlide.removeAttribute("hidden");
+
+  document.getElementById("minRez").innerHTML = curMin;
+  document.getElementById("secRez").innerHTML = curSec;
 
   if (timeFuckedup) {usrScore = 0}
 
@@ -238,6 +244,8 @@ function sendResults() {
   const xht = new XMLHttpRequest();
   xht.open("GET", url);
   xht.send();
+
+  alert("Ответ записан, спасибо)")
 }
 
 nextBtn.addEventListener("click", checkAns, false);

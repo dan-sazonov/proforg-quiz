@@ -130,7 +130,7 @@ let allQuestions = [
     type: "radio"
   }
 ];
-let answeredQuestions = [1,5,3,2];
+let answeredQuestions = [1, 5, 3, 2];
 const startBtn = document.getElementById("startBtn");
 const nextBtn = document.getElementById("nextBtn");
 const finishBtn = document.getElementById("finishBtn");
@@ -140,7 +140,7 @@ const finishSlide = document.getElementById("finishSlide");
 
 // дергаем 10 рандомных вопросов
 let myQuestions = [];
-for (let i = 0 ; (i < 10) && (i < allQuestions.length) ; i++) {
+for (let i = 0; (i < 10) && (i < allQuestions.length); i++) {
   let r = Math.floor(Math.random() * (allQuestions.length - i)) + i;
   let randQuestion = allQuestions[r];
   allQuestions[r] = allQuestions[i];
@@ -154,8 +154,24 @@ function startPolling() {
   startSlide.setAttribute("hidden", "");
   quizSlide.removeAttribute("hidden");
 }
+
 startBtn.addEventListener("click", startPolling, false);
 
+// рендерим вопрос
+function rendQuestion(q) {
+  // пишем текст вопроса
+  document.getElementById("ansText").innerHTML = q.question;
 
-
+  let quizForm = "";
+  let ansNum = 0;
+  for (let key of Object.keys(q.answers)) {
+    ansNum++;
+    quizForm += `<li class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="${key}">
+        <label class="form-check-label" for="${key}">${q.answers[key]}</label>
+    </li>`;
+  }
+  document.getElementById("ansForm").innerHTML = quizForm;
+}
+rendQuestion(allQuestions[0])
 console.log(myQuestions);

@@ -47,12 +47,11 @@
       <p>Пройди, пожалуйста, небольшой тест по материалам лекции.</p>
       <p>На выполнение у тебя будет 10 минут. Если ты не уложишься, ответ записан не будет. Желаем удачи)</p>
       <form class="d-flex flex-column justify-content-between">
-        <button type="button" class="btn btn-primary"> Поехали!</button>
+        <button type="button" class="btn btn-primary" id="startBtn">Поехали!</button>
       </form>
     </div>
 
-
-    <div class="step10">
+    <div class="step10" hidden>
       <div class="quiz">
         <p class="d-flex justify-content-center text-title">Текст вопроса?</p>
         <p class="text-sup">Выбери все верные ответы</p>
@@ -99,7 +98,9 @@
       <h2 class="mb-5">Спасибо за прохождение!</h2>
       <p>Ты справился за 9 минут и 18 секунд, твой результат: <b>10 баллов</b></p>
       <form class="d-flex flex-column justify-content-between">
-        <button type="button" class="btn btn-primary">Завершить</button>
+        <label for="nameData">Как тебя зовут?</label><input type="text" id="nameData" name="student_name">
+        <label for="groupData">Из какой ты группы?</label><input type="text" id="groupData" name="student_group">
+        <button type="submit" class="btn btn-primary">Завершить</button>
       </form>
     </div>
 

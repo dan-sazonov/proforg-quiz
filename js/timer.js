@@ -1,11 +1,12 @@
 const compareDate = new Date();
 // Time of countdown. Year, month, date, hours, minutes, seconds, ms
-const dateEntered = compareDate.setMinutes(compareDate.getMinutes() + 10, compareDate.getSeconds() + 40);
+const dateEntered = compareDate.setMinutes(compareDate.getMinutes() + 2, compareDate.getSeconds() + 40);
 
 const timer = setInterval(function () {
   timeBetweenDates(compareDate);
 }, 1000);
 
+let timeFuckedup = false;
 
 function timeBetweenDates(toDate) {
   const now = new Date();
@@ -22,5 +23,9 @@ function timeBetweenDates(toDate) {
 
     document.getElementById("minutes").innerHTML = `${minutes}`;
     document.getElementById("seconds").innerHTML = `${seconds}`;
+
+    if (minutes === 0 && seconds === 0) {
+      timeFuckedup = true;
+    }
   }
 }

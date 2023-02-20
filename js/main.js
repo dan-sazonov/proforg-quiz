@@ -202,6 +202,9 @@ function nextQuestions() {
 function showResults() {
   quizSlide.setAttribute("hidden", "");
   finishSlide.removeAttribute("hidden");
+
+  if (timeFuckedup) {usrScore = 0}
+
   document.getElementById("quizRez").innerHTML = usrScore;
 
   let label = '';

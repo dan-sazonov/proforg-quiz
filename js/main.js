@@ -148,11 +148,12 @@ for (let i = 0; (i < 10) && (i < allQuestions.length); i++) {
 function startPolling() {
   startSlide.setAttribute("hidden", "");
   quizSlide.removeAttribute("hidden");
-  rendQuestion(allQuestions[0]);
+  rendQuestion(0);
 }
 
 // рендерим вопрос
-function rendQuestion(q) {
+function rendQuestion(n) {
+  let q = allQuestions[n]
   // пишем текст вопроса
   document.getElementById("ansText").innerHTML = q.question;
 
@@ -170,6 +171,7 @@ function rendQuestion(q) {
     </li>`;
   }
   document.getElementById("ansForm").innerHTML = quizForm;
+  document.getElementById(`it${n + 1}`).classList.add("active");
 }
 
 // проверяем ответ
@@ -193,7 +195,7 @@ function nextQuestions() {
     showResults();
   } else {
     answeredQuestions++;
-    rendQuestion(allQuestions[answeredQuestions]);
+    rendQuestion(answeredQuestions);
   }
 }
 
@@ -238,4 +240,3 @@ function sendResults() {
 nextBtn.addEventListener("click", checkAns, false);
 startBtn.addEventListener("click", startPolling, false);
 finishBtn.addEventListener("click", sendResults, false);
-

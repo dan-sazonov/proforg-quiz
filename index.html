@@ -60,21 +60,26 @@
 
       <div class="d-flex flex-column justify-content-center">
         <div class="steps d-flex justify-content-center">
-          <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span
-          class="active">10</span>
+          <span id="it1">1</span><span id="it2">2</span><span id="it3">3</span><span id="it4">4</span><span
+          id="it5">5</span><span id="it6">6</span><span id="it7">7</span><span id="it8">8</span><span
+          id="it9">9</span><span
+          id="it10">10</span>
         </div>
 
         <p class="timer">До завершения теста осталось времени: <b>2:17</b></p>
-        <button type="button" class="btn btn-success mr-4"  id="nextBtn">Далее</button>
+        <button type="button" class="btn btn-success mr-4" id="nextBtn">Далее</button>
       </div>
     </div>
 
     <div class="step11" id="finishSlide" hidden>
       <h2 class="mb-5">Спасибо за прохождение!</h2>
-      <p>Ты справился за 9 минут и 18 секунд, твой результат: <b><span id="quizRez">10</span> <span id="quizRezLbl">баллов</span></b></p>
+      <p>Ты справился за 9 минут и 18 секунд, твой результат: <b><span id="quizRez">10</span> <span id="quizRezLbl">баллов</span></b>
+      </p>
       <form class="d-flex flex-column justify-content-between" name="usr_data">
-        <label for="nameData">Как тебя зовут?</label><input class="formData" type="text" id="nameData" name="student_name" placeholder="ФИО полностью">
-        <label for="groupData">Из какой ты группы?</label><input class="formData" type="text" id="groupData" name="student_group">
+        <label for="nameData">Как тебя зовут?</label><input class="formData" type="text" id="nameData"
+                                                            name="student_name" placeholder="ФИО полностью">
+        <label for="groupData">Из какой ты группы?</label><input class="formData" type="text" id="groupData"
+                                                                 name="student_group">
         <button type="button" class="btn btn-primary" id="finishBtn">Завершить</button>
       </form>
     </div>

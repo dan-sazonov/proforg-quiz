@@ -130,7 +130,13 @@ let allQuestions = [
     type: "radio"
   }
 ];
+let answeredQuestions = [1,5,3,2];
+const startBtn = document.getElementById(startBtn);
+const nextBtn = document.getElementById(nextBtn);
+const finishBtn = document.getElementById(finishBtn);
 
+
+// дергаем 10 рандомных вопросов
 let myQuestions = [];
 for (let i = 0 ; (i < 10) && (i < allQuestions.length) ; i++) {
   let r = Math.floor(Math.random() * (allQuestions.length - i)) + i;

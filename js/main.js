@@ -124,7 +124,7 @@ let allQuestions = [
 ];
 
 let answeredQuestions = 0;
-let usrScore = 0 ;
+let usrScore = 0;
 
 const startBtn = document.getElementById("startBtn");
 const nextBtn = document.getElementById("nextBtn");
@@ -178,16 +178,19 @@ function checkAns() {
   let usrAns = [];
   document.querySelectorAll('input[name=ans]:checked').forEach(element => usrAns.push(element.id));
 
-  let isSame = (usrAns.length === allQuestions[answeredQuestions].correctAnswer.length) && usrAns.every(function(element, index) {
+  let isSame = (usrAns.length === allQuestions[answeredQuestions].correctAnswer.length) && usrAns.every(function (element, index) {
     return element === allQuestions[answeredQuestions].correctAnswer[index];
   });
 
-  if (isSame) {usrScore++}
+  if (isSame) {
+    usrScore++
+  }
   nextQuestions();
 }
 
 function nextQuestions() {
-  if (answeredQuestions === 9) {
+  if (answeredQuestions === 3) {
+    // todo поменять на 10
     showResults();
     sendResults();
   } else {
@@ -199,6 +202,17 @@ function nextQuestions() {
 function showResults() {
   quizSlide.setAttribute("hidden", "");
   finishSlide.removeAttribute("hidden");
+  document.getElementById("quizRez").innerHTML = usrScore;
+
+  let label = '';
+  if (usrScore === 1) {
+    label = "балл"
+  } else if (label >= 2 && label <= 4) {
+    label = "балла"
+  } else {
+    label = "баллов"
+  }
+  document.getElementById("quizRezLbl").innerHTML = label;
 }
 
 function sendResults() {

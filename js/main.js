@@ -18,7 +18,7 @@ let allQuestions = [
       c: "Стипендия ректора",
       d: "Стипендия Санкт-Петербурга"
     },
-    correctAnswer: ["a","b"],
+    correctAnswer: ["a", "b"],
     type: "checkbox"
   },
   {
@@ -268,7 +268,9 @@ function showResults() {
   document.getElementById("minRez").innerHTML = curMin;
   document.getElementById("secRez").innerHTML = curSec;
 
-  if (timeFuckedup) {usrScore = 0}
+  if (timeFuckedup) {
+    usrScore = 0
+  }
 
   document.getElementById("quizRez").innerHTML = usrScore;
 
@@ -288,7 +290,7 @@ function sendResults() {
   let textObj = {
     name: form.elements.student_name.value,
     group: form.elements.student_group.value,
-    score: usrScore
+    score: usrScore * 0.4
   };
 
   let tg = {

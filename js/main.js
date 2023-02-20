@@ -1,122 +1,182 @@
 let allQuestions = [
   {
-    question: "q1",
+    question: "С какого дня назначается ГАС?",
     answers: {
-      a: "Douglas Crockford",
-      b: "Sheryl Sandberg",
-      c: "Brendan Eich"
+      a: "Через 2 недели после сдачи промежуточной аттестации",
+      b: "С подачи заявления на ГАС",
+      c: "С момента поступления в университет",
+      d: "С первого дня месяца, следующего за промежуточной аттестацией"
+    },
+    correctAnswer: ["d"],
+    type: "radio"
+  },
+  {
+    question: "Перечислите виды стипендий",
+    answers: {
+      a: "Именные",
+      b: "Стипендии слушателям подготовительных отделений",
+      c: "Стипендия ректора",
+      d: "Стипендия Санкт-Петербурга"
+    },
+    correctAnswer: ["a","b"],
+    type: "checkbox"
+  },
+  {
+    question: "Норматив ГАС для студентов ВО",
+    answers: {
+      a: "1663",
+      b: "1190",
+      c: "1484",
+      d: "1488"
+    },
+    correctAnswer: ["c"],
+    type: "radio"
+  },
+  {
+    question: "Выплачивается ли ГАС иностранным студентам в случае получения неудовлетворительной оценки?",
+    answers: {
+      a: "Да",
+      b: "Нет"
     },
     correctAnswer: ["a"],
     type: "radio"
   },
   {
-    question: "q2",
+    question: "Выплачивается ли академическая стипендия во время академического отпуска?",
     answers: {
-      a: "Node.js",
-      b: "TypeScript",
-      c: "npm"
+      a: "Да",
+      b: "Нет"
+    },
+    correctAnswer: ["b"],
+    type: "radio"
+  },
+  {
+    question: "Численность студентов, получающих ПГАС, не может превышать…",
+    answers: {
+      a: "10% получающих ГАС",
+      b: "10% от всего стипендиального фонда",
+      c: "13% получающих ПГАС по другим направлениям",
+      d: "20% получающих ПГАС по другим направлениям"
     },
     correctAnswer: ["a"],
     type: "radio"
   },
   {
-    question: "q3",
+    question: "Может ли студент получать ПГСС в первом семестре?",
     answers: {
-      a: "Angular",
-      b: "jQuery",
-      c: "RequireJS",
-      d: "ESLint"
+      a: "Да",
+      b: "Нет"
+    },
+    correctAnswer: ["b"],
+    type: "radio"
+  },
+  {
+    question: "Может ли студент 20-ти лет, учащийся на втором курсе, получать ПГСС?",
+    answers: {
+      a: "Да",
+      b: "Нет"
     },
     correctAnswer: ["a"],
     type: "radio"
   },
   {
-    question: "q4",
+    question: "Ограничение размера повышенной социальной стипендии",
     answers: {
-      a: "Douglas Crockford",
-      b: "Sheryl Sandberg",
-      c: "Brendan Eich"
+      a: "Нет ограничений",
+      b: "1484",
+      c: "Величина МРОТ",
+      d: "20000"
     },
     correctAnswer: ["a"],
     type: "radio"
   },
   {
-    question: "q5",
+    question: "Может ли студент получать ГСС при закрытии ОДНОГО предмета на оценку «удовлетворительно»?",
     answers: {
-      a: "Node.js",
-      b: "TypeScript",
-      c: "npm"
+      a: "Да",
+      b: "Нет"
     },
     correctAnswer: ["a"],
     type: "radio"
   },
   {
-    question: "q6",
+    question: "На какой промежуток времени назначается ГСС?",
     answers: {
-      a: "Douglas Crockford",
-      b: "Sheryl Sandberg",
-      c: "Brendan Eich"
+      a: "На 12 месяцев со дня получения справки",
+      b: "На 6 месяцев со дня получения справки",
+      c: "На последующий учебный год",
+      d: "На последующий календарный год"
     },
     correctAnswer: ["a"],
     type: "radio"
   },
   {
-    question: "q7",
+    question: "Сколько видов стипендий закреплено в ФЗ-273 «Об образовании в РФ»",
     answers: {
-      a: "Node.js",
-      b: "TypeScript",
-      c: "npm"
+      a: "4",
+      b: "7",
+      c: "12",
+      d: "3"
+    },
+    correctAnswer: ["b"],
+    type: "radio"
+  },
+  {
+    question: "Номер приказа, определяющий порядок назначения и выплаты стипендии студентам РФ",
+    answers: {
+      a: "455",
+      b: "36",
+      c: "39",
+      d: "1663"
+    },
+    correctAnswer: ["d"],
+    type: "radio"
+  },
+  {
+    question: "Профсоюз имеет право удерживать членские взносы со всех видов стипендии",
+    answers: {
+      a: "Да",
+      b: "Нет"
     },
     correctAnswer: ["a"],
     type: "radio"
   },
   {
-    question: "q8",
+    question: "Студенты, проживающие в общежитии и получающие ГСС, освобождены от платы за наем помещения",
     answers: {
-      a: "Angular",
-      b: "jQuery",
-      c: "RequireJS",
-      d: "ESLint"
+      a: "Да",
+      b: "Нет"
     },
     correctAnswer: ["a"],
     type: "radio"
   },
   {
-    question: "q9",
+    question: "Что должен предоставить студент, чтобы претендовать на получение социальной стипендии?",
     answers: {
-      a: "Douglas Crockford",
-      b: "Sheryl Sandberg",
-      c: "Brendan Eich"
+      a: "Справку из МФЦ",
+      b: "Справка об инвалидности",
+      c: "Справка из органов соцзащиты населения",
+      d: "Чек из стоматологии"
+    },
+    correctAnswer: ["a", "c"],
+    type: "checkbox"
+  },
+  {
+    question: "Может ли студент контрактной формы обучения получать стипендию?",
+    answers: {
+      a: "Да",
+      b: "Нет"
     },
     correctAnswer: ["a"],
     type: "radio"
   },
   {
-    question: "q10",
+    question: "Номер статьи ФЗ «Об образовании в РФ», посвященный стипендиям и другим денежным выплатам",
     answers: {
-      a: "Node.js",
-      b: "TypeScript",
-      c: "npm"
-    },
-    correctAnswer: ["a"],
-    type: "radio"
-  },
-  {
-    question: "q11",
-    answers: {
-      a: "Douglas Crockford",
-      b: "Sheryl Sandberg",
-      c: "Brendan Eich"
-    },
-    correctAnswer: ["a"],
-    type: "radio"
-  },
-  {
-    question: "q12",
-    answers: {
-      a: "Node.js",
-      b: "TypeScript",
-      c: "npm"
+      a: "36",
+      b: "1488",
+      c: "11",
+      d: "39"
     },
     correctAnswer: ["a"],
     type: "radio"

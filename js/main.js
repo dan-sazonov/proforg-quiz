@@ -265,8 +265,8 @@ function showResults() {
   quizSlide.setAttribute("hidden", "");
   finishSlide.removeAttribute("hidden");
 
-  document.getElementById("minRez").innerHTML = curMin;
-  document.getElementById("secRez").innerHTML = curSec;
+  document.getElementById("minRez").innerHTML = 10 - curMin;
+  document.getElementById("secRez").innerHTML = 60 - curSec;
 
   if (timeFuckedup) {
     usrScore = 0

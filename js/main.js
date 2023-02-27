@@ -253,7 +253,7 @@ function checkAns() {
 }
 
 function nextQuestions() {
-  if (answeredQuestions === 9) {
+  if (answeredQuestions === 14) {
     showResults();
   } else {
     answeredQuestions++;

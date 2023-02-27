@@ -8,7 +8,7 @@ let allQuestions = [
       d: "С первого дня месяца, следующего за промежуточной аттестацией"
     },
     correctAnswer: ["d"],
-    type: "radio"
+    type: "text"
   },
   {
     question: "Перечислите виды стипендий",
@@ -19,7 +19,7 @@ let allQuestions = [
       d: "Стипендия Санкт-Петербурга"
     },
     correctAnswer: ["a", "b"],
-    type: "checkbox"
+    type: "text"
   },
   {
     question: "Норматив ГАС для студентов ВО",
@@ -30,7 +30,7 @@ let allQuestions = [
       d: "1488"
     },
     correctAnswer: ["c"],
-    type: "radio"
+    type: "text"
   },
   {
     question: "Выплачивается ли ГАС иностранным студентам в случае получения неудовлетворительной оценки?",
@@ -39,7 +39,7 @@ let allQuestions = [
       b: "Нет"
     },
     correctAnswer: ["a"],
-    type: "radio"
+    type: "text"
   },
   {
     question: "Выплачивается ли академическая стипендия во время академического отпуска?",
@@ -48,7 +48,7 @@ let allQuestions = [
       b: "Нет"
     },
     correctAnswer: ["b"],
-    type: "radio"
+    type: "text"
   },
   {
     question: "Численность студентов, получающих ПГАС, не может превышать…",
@@ -59,7 +59,7 @@ let allQuestions = [
       d: "20% получающих ПГАС по другим направлениям"
     },
     correctAnswer: ["a"],
-    type: "radio"
+    type: "text"
   },
   {
     question: "Может ли студент получать ПГСС в первом семестре?",
@@ -68,7 +68,7 @@ let allQuestions = [
       b: "Нет"
     },
     correctAnswer: ["b"],
-    type: "radio"
+    type: "text"
   },
   {
     question: "Может ли студент 20-ти лет, учащийся на втором курсе, получать ПГСС?",
@@ -77,7 +77,7 @@ let allQuestions = [
       b: "Нет"
     },
     correctAnswer: ["a"],
-    type: "radio"
+    type: "text"
   },
   {
     question: "Ограничение размера повышенной социальной стипендии",
@@ -88,7 +88,7 @@ let allQuestions = [
       d: "20000"
     },
     correctAnswer: ["a"],
-    type: "radio"
+    type: "text"
   },
   {
     question: "Может ли студент получать ГСС при закрытии ОДНОГО предмета на оценку «удовлетворительно»?",
@@ -97,7 +97,7 @@ let allQuestions = [
       b: "Нет"
     },
     correctAnswer: ["a"],
-    type: "radio"
+    type: "text"
   },
   {
     question: "На какой промежуток времени назначается ГСС?",
@@ -108,7 +108,7 @@ let allQuestions = [
       d: "На последующий календарный год"
     },
     correctAnswer: ["a"],
-    type: "radio"
+    type: "text"
   },
   {
     question: "Сколько видов стипендий закреплено в ФЗ-273 «Об образовании в РФ»",
@@ -119,7 +119,7 @@ let allQuestions = [
       d: "3"
     },
     correctAnswer: ["b"],
-    type: "radio"
+    type: "text"
   },
   {
     question: "Номер приказа, определяющий порядок назначения и выплаты стипендии студентам РФ",
@@ -130,7 +130,7 @@ let allQuestions = [
       d: "1663"
     },
     correctAnswer: ["d"],
-    type: "radio"
+    type: "text"
   },
   {
     question: "Профсоюз имеет право удерживать членские взносы со всех видов стипендии",
@@ -139,7 +139,7 @@ let allQuestions = [
       b: "Нет"
     },
     correctAnswer: ["a"],
-    type: "radio"
+    type: "text"
   },
   {
     question: "Студенты, проживающие в общежитии и получающие ГСС, освобождены от платы за наем помещения",
@@ -148,7 +148,7 @@ let allQuestions = [
       b: "Нет"
     },
     correctAnswer: ["a"],
-    type: "radio"
+    type: "text"
   },
   {
     question: "Что должен предоставить студент, чтобы претендовать на получение социальной стипендии?",
@@ -159,7 +159,7 @@ let allQuestions = [
       d: "Чек из стоматологии"
     },
     correctAnswer: ["a", "c"],
-    type: "checkbox"
+    type: "text"
   },
   {
     question: "Может ли студент контрактной формы обучения получать стипендию?",
@@ -168,7 +168,7 @@ let allQuestions = [
       b: "Нет"
     },
     correctAnswer: ["a"],
-    type: "radio"
+    type: "text"
   },
   {
     question: "Номер статьи ФЗ «Об образовании в РФ», посвященный стипендиям и другим денежным выплатам",
@@ -179,7 +179,7 @@ let allQuestions = [
       d: "39"
     },
     correctAnswer: ["a"],
-    type: "radio"
+    type: "text"
   }
 ];
 
@@ -218,18 +218,21 @@ function rendQuestion(n) {
   document.getElementById("ansText").innerHTML = q.question;
 
   // пишем количество ответов
-  document.getElementById("ansSup").innerHTML = q.type === "checkbox" ? "Выбери все верные ответы" : "Выбери один верный ответ";
+  if (q.type === "checkbox") document.getElementById("ansSup").innerHTML = "Выбери все верные ответы"
+  if (q.type === "radio") document.getElementById("ansSup").innerHTML = "Выбери один верный ответ"
+  if (q.type === "text") document.getElementById("ansSup").innerHTML = "Введи текст своего ответа"
+  // document.getElementById("ansSup").innerHTML = q.type === "checkbox" ? "Выбери все верные ответы" : ("radio" ? "Выбери один верный ответ" : "Введи текст своего ответа");
 
   // пишем сами вопросы
-  let quizForm = "";
+  let quizForm = `<li class="form-check"><input type="text" id="usrTxtAns" name="ans"></li>`;
   let ansNum = 0;
-  for (let key of Object.keys(q.answers)) {
-    ansNum++;
-    quizForm += `<li class="form-check">
-        <input class="form-check-input" type="${q.type}" value="" id="${key}" name="ans">
-        <label class="form-check-label" for="${key}">${q.answers[key]}</label>
-    </li>`;
-  }
+  // for (let key of Object.keys(q.answers)) {
+  //   ansNum++;
+    // quizForm += `<li class="form-check">
+    //     <input class="form-check-input" type="${q.type}" value="" id="${key}" name="ans">
+    //     <label class="form-check-label" for="${key}">${q.answers[key]}</label>
+    // </li>`;
+  // }
   document.getElementById("ansForm").innerHTML = quizForm;
   document.getElementById(`it${n + 1}`).classList.add("active");
 }

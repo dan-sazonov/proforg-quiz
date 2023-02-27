@@ -185,6 +185,7 @@ let allQuestions = [
 
 let answeredQuestions = 0;
 let usrScore = 0;
+let usrAnswersInput = []
 
 const startBtn = document.getElementById("startBtn");
 const nextBtn = document.getElementById("nextBtn");
@@ -224,14 +225,14 @@ function rendQuestion(n) {
   // document.getElementById("ansSup").innerHTML = q.type === "checkbox" ? "Выбери все верные ответы" : ("radio" ? "Выбери один верный ответ" : "Введи текст своего ответа");
 
   // пишем сами вопросы
-  let quizForm = `<li class="form-check"><input type="text" id="usrTxtAns" name="ans"></li>`;
+  let quizForm = `<input class="form-check" type="text" id="usrTxtAns" name="ans">`;
   let ansNum = 0;
   // for (let key of Object.keys(q.answers)) {
   //   ansNum++;
-    // quizForm += `<li class="form-check">
-    //     <input class="form-check-input" type="${q.type}" value="" id="${key}" name="ans">
-    //     <label class="form-check-label" for="${key}">${q.answers[key]}</label>
-    // </li>`;
+  // quizForm += `<li class="form-check">
+  //     <input class="form-check-input" type="${q.type}" value="" id="${key}" name="ans">
+  //     <label class="form-check-label" for="${key}">${q.answers[key]}</label>
+  // </li>`;
   // }
   document.getElementById("ansForm").innerHTML = quizForm;
   document.getElementById(`it${n + 1}`).classList.add("active");
@@ -239,16 +240,18 @@ function rendQuestion(n) {
 
 // проверяем ответ
 function checkAns() {
-  let usrAns = [];
-  document.querySelectorAll('input[name=ans]:checked').forEach(element => usrAns.push(element.id));
+  // let usrAns = [];
+  // document.querySelectorAll('input[name=ans]:checked').forEach(element => usrAns.push(element.id));
+  //
+  // let isSame = (usrAns.length === allQuestions[answeredQuestions].correctAnswer.length) && usrAns.every(function (element, index) {
+  //   return element === allQuestions[answeredQuestions].correctAnswer[index];
+  // });
 
-  let isSame = (usrAns.length === allQuestions[answeredQuestions].correctAnswer.length) && usrAns.every(function (element, index) {
-    return element === allQuestions[answeredQuestions].correctAnswer[index];
-  });
+  // if (isSame) {
+  //   usrScore++
+  // }
 
-  if (isSame) {
-    usrScore++
-  }
+  usrAnswersInput.push(`${allQuestions[answeredQuestions].question} - ${document.forms.ansForm.elements.usrTxtAns.value}`)
   nextQuestions();
 }
 
@@ -293,7 +296,8 @@ function sendResults() {
   let textObj = {
     name: form.elements.student_name.value,
     group: form.elements.student_group.value,
-    score: usrScore * 0.4
+    score: usrScore * 0.4,
+    dontFuckedup: !timeFuckedup
   };
 
   let tg = {
@@ -301,8 +305,11 @@ function sendResults() {
     chat_id: "385056286"
   }
 
-  let text = `${textObj.name}, ${textObj.group}, ${textObj.score}`
 
+  console.log(usrAnswersInput)
+  let text = `{"name": "${textObj.name}", "stGroup": "${textObj.group}", "loseTime": "${textObj.dontFuckedup}", "answers": [`
+  usrAnswersInput.forEach(element => text += `"${element}",`);
+  text += `]}`
   const url = `https://api.telegram.org/bot${tg.token}/sendMessage?chat_id=${tg.chat_id}&text=${text}`;
   const xht = new XMLHttpRequest();
   xht.open("GET", url);

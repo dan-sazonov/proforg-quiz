@@ -38,7 +38,7 @@
 
 <div class="container-fluid wrap d-flex flex-column justify-content-between">
   <header class="d-flex justify-content-center border-bottom logo">
-    <img src="logo.png" alt="Логотип школы профоргов" class="img-fluid">
+    <img src="content/logo.png" alt="Логотип школы профоргов" class="img-fluid">
   </header>
 
   <main class="d-flex justify-content-center">
@@ -56,15 +56,14 @@
       <div class="quiz">
         <p class="d-flex justify-content-center text-title" id="ansText">Текст вопроса?</p>
         <p class="text-sup" id="ansSup"></p>
-        <ul class="form mb-5 d-flex flex-column align-items-md-center" id="ansForm"></ul>
+        <form class="form mb-5 d-flex flex-column align-items-md-center" id="ansForm"></form>
       </div>
 
       <div class="d-flex flex-column justify-content-center">
         <div class="steps d-flex justify-content-center">
           <span id="it1">1</span><span id="it2">2</span><span id="it3">3</span><span id="it4">4</span><span
           id="it5">5</span><span id="it6">6</span><span id="it7">7</span><span id="it8">8</span><span
-          id="it9">9</span><span
-          id="it10">10</span>
+          id="it9">9</span><span id="it10">10</span><span id="it11">11</span><span id="it12">12</span><span id="it13">13</span><span id="it14">14</span><span id="it15">15</span>
         </div>
 
         <p class="timer">До завершения теста осталось: <span id="minutes" class="font-weight-bold"> </span>:<span
@@ -77,8 +76,10 @@
 
     <div class="step11" id="finishSlide" hidden>
       <h2 class="mb-5">Спасибо за прохождение!</h2>
-      <p>Ты справился за <span id="minRez"></span>:<span id="secRez"></span>, твой результат: <b><span
-        id="quizRez">10</span> <span id="quizRezLbl">баллов</span></b>
+      <p>Ты справился за <span id="minRez"></span>:<span id="secRez"></span>, мы проверим твои ответы чуть позже
+
+<!--      <p>Ты справился за <span id="minRez"></span>:<span id="secRez"></span>, твой результат: <b><span-->
+<!--        id="quizRez">10</span> <span id="quizRezLbl">баллов</span></b>-->
       </p>
       <form class="d-flex flex-column justify-content-between" name="usr_data">
         <label for="nameData">Как тебя зовут?</label><input class="formData" type="text" id="nameData"

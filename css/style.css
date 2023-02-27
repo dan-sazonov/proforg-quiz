@@ -6,8 +6,16 @@
   height: 100vh;
 }
 
+.steps {
+  width: 100% !important;
+}
+
+#usrTxtAns {
+  width: 90%;
+}
+
 .steps span {
-  margin-right: 1em !important;
+  margin: 0 auto !important;
 }
 
 .text-title {

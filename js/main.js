@@ -1,6 +1,6 @@
 let allQuestions = [
   {
-    question: "С какого дня назначается ГАС?",
+    question: "Сколько человек можно разместить в комнате 36 м. кв.?",
     answers: {
       a: "Через 2 недели после сдачи промежуточной аттестации",
       b: "С подачи заявления на ГАС",
@@ -8,10 +8,10 @@ let allQuestions = [
       d: "С первого дня месяца, следующего за промежуточной аттестацией"
     },
     correctAnswer: ["d"],
-    type: "radio"
+    type: "text"
   },
   {
-    question: "Перечислите виды стипендий",
+    question: "Допустимо ли размещать изолятор для проживающих в общежитии на верхних этажах (2-ой и выше)?",
     answers: {
       a: "Именные",
       b: "Стипендии слушателям подготовительных отделений",
@@ -19,10 +19,10 @@ let allQuestions = [
       d: "Стипендия Санкт-Петербурга"
     },
     correctAnswer: ["a", "b"],
-    type: "checkbox"
+    type: "text"
   },
   {
-    question: "Норматив ГАС для студентов ВО",
+    question: "Сколько общежитий университета в ГУАП?",
     answers: {
       a: "1663",
       b: "1190",
@@ -30,28 +30,28 @@ let allQuestions = [
       d: "1488"
     },
     correctAnswer: ["c"],
-    type: "radio"
+    type: "text"
   },
   {
-    question: "Выплачивается ли ГАС иностранным студентам в случае получения неудовлетворительной оценки?",
+    question: "О чем говориться в ст. 105 ЖК РФ?",
     answers: {
       a: "Да",
       b: "Нет"
     },
     correctAnswer: ["a"],
-    type: "radio"
+    type: "text"
   },
   {
-    question: "Выплачивается ли академическая стипендия во время академического отпуска?",
+    question: "Можно ли размещать прачечную на 2-ом и выше этажах?",
     answers: {
       a: "Да",
       b: "Нет"
     },
     correctAnswer: ["b"],
-    type: "radio"
+    type: "text"
   },
   {
-    question: "Численность студентов, получающих ПГАС, не может превышать…",
+    question: "Какая стоимость проживания в общежитиях ГУАП?",
     answers: {
       a: "10% получающих ГАС",
       b: "10% от всего стипендиального фонда",
@@ -59,28 +59,28 @@ let allQuestions = [
       d: "20% получающих ПГАС по другим направлениям"
     },
     correctAnswer: ["a"],
-    type: "radio"
+    type: "text"
   },
   {
-    question: "Может ли студент получать ПГСС в первом семестре?",
+    question: "Как получить освобождение от оплаты за проживание в общежитии?",
     answers: {
       a: "Да",
       b: "Нет"
     },
     correctAnswer: ["b"],
-    type: "radio"
+    type: "text"
   },
   {
-    question: "Может ли студент 20-ти лет, учащийся на втором курсе, получать ПГСС?",
+    question: "Допустимая температура воздуха в душевых помещениях общежития?",
     answers: {
       a: "Да",
       b: "Нет"
     },
     correctAnswer: ["a"],
-    type: "radio"
+    type: "text"
   },
   {
-    question: "Ограничение размера повышенной социальной стипендии",
+    question: "Как часто необходимо производить смену постельных принадлежностей?",
     answers: {
       a: "Нет ограничений",
       b: "1484",
@@ -88,19 +88,19 @@ let allQuestions = [
       d: "20000"
     },
     correctAnswer: ["a"],
-    type: "radio"
+    type: "text"
   },
   {
-    question: "Может ли студент получать ГСС при закрытии ОДНОГО предмета на оценку «удовлетворительно»?",
+    question: "Количество столов, которое должно находиться в комнате, предназначенной для проживания 3-х человек",
     answers: {
       a: "Да",
       b: "Нет"
     },
     correctAnswer: ["a"],
-    type: "radio"
+    type: "text"
   },
   {
-    question: "На какой промежуток времени назначается ГСС?",
+    question: "С какой периодичностью должна производиться уборка мест общего пользования?",
     answers: {
       a: "На 12 месяцев со дня получения справки",
       b: "На 6 месяцев со дня получения справки",
@@ -108,10 +108,10 @@ let allQuestions = [
       d: "На последующий календарный год"
     },
     correctAnswer: ["a"],
-    type: "radio"
+    type: "text"
   },
   {
-    question: "Сколько видов стипендий закреплено в ФЗ-273 «Об образовании в РФ»",
+    question: "На каком расстоянии должен находиться контейнер для сбора бытовых отходов от жилого здания?",
     answers: {
       a: "4",
       b: "7",
@@ -119,10 +119,10 @@ let allQuestions = [
       d: "3"
     },
     correctAnswer: ["b"],
-    type: "radio"
+    type: "text"
   },
   {
-    question: "Номер приказа, определяющий порядок назначения и выплаты стипендии студентам РФ",
+    question: "Допускается ли эксплуатация умывальных, душевых без естественного освещения?",
     answers: {
       a: "455",
       b: "36",
@@ -130,61 +130,31 @@ let allQuestions = [
       d: "1663"
     },
     correctAnswer: ["d"],
-    type: "radio"
+    type: "text"
   },
   {
-    question: "Профсоюз имеет право удерживать членские взносы со всех видов стипендии",
+    question: "В какой временной период запрещено превышать уровень шума выше 5 дБ?",
     answers: {
       a: "Да",
       b: "Нет"
     },
     correctAnswer: ["a"],
-    type: "radio"
+    type: "text"
   },
   {
-    question: "Студенты, проживающие в общежитии и получающие ГСС, освобождены от платы за наем помещения",
+    question: "Каким инвентарем должно быть оборудовано помещение для ручной стирки?",
     answers: {
       a: "Да",
       b: "Нет"
     },
     correctAnswer: ["a"],
-    type: "radio"
-  },
-  {
-    question: "Что должен предоставить студент, чтобы претендовать на получение социальной стипендии?",
-    answers: {
-      a: "Справку из МФЦ",
-      b: "Справка об инвалидности",
-      c: "Справка из органов соцзащиты населения",
-      d: "Чек из стоматологии"
-    },
-    correctAnswer: ["a", "c"],
-    type: "checkbox"
-  },
-  {
-    question: "Может ли студент контрактной формы обучения получать стипендию?",
-    answers: {
-      a: "Да",
-      b: "Нет"
-    },
-    correctAnswer: ["a"],
-    type: "radio"
-  },
-  {
-    question: "Номер статьи ФЗ «Об образовании в РФ», посвященный стипендиям и другим денежным выплатам",
-    answers: {
-      a: "36",
-      b: "1488",
-      c: "11",
-      d: "39"
-    },
-    correctAnswer: ["a"],
-    type: "radio"
+    type: "text"
   }
 ];
 
 let answeredQuestions = 0;
 let usrScore = 0;
+let usrAnswersInput = []
 
 const startBtn = document.getElementById("startBtn");
 const nextBtn = document.getElementById("nextBtn");
@@ -218,39 +188,44 @@ function rendQuestion(n) {
   document.getElementById("ansText").innerHTML = q.question;
 
   // пишем количество ответов
-  document.getElementById("ansSup").innerHTML = q.type === "checkbox" ? "Выбери все верные ответы" : "Выбери один верный ответ";
+  if (q.type === "checkbox") document.getElementById("ansSup").innerHTML = "Выбери все верные ответы"
+  if (q.type === "radio") document.getElementById("ansSup").innerHTML = "Выбери один верный ответ"
+  if (q.type === "text") document.getElementById("ansSup").innerHTML = "Введи текст своего ответа"
+  // document.getElementById("ansSup").innerHTML = q.type === "checkbox" ? "Выбери все верные ответы" : ("radio" ? "Выбери один верный ответ" : "Введи текст своего ответа");
 
   // пишем сами вопросы
-  let quizForm = "";
+  let quizForm = `<input class="form-check" type="text" id="usrTxtAns" name="ans">`;
   let ansNum = 0;
-  for (let key of Object.keys(q.answers)) {
-    ansNum++;
-    quizForm += `<li class="form-check">
-        <input class="form-check-input" type="${q.type}" value="" id="${key}" name="ans">
-        <label class="form-check-label" for="${key}">${q.answers[key]}</label>
-    </li>`;
-  }
+  // for (let key of Object.keys(q.answers)) {
+  //   ansNum++;
+  // quizForm += `<li class="form-check">
+  //     <input class="form-check-input" type="${q.type}" value="" id="${key}" name="ans">
+  //     <label class="form-check-label" for="${key}">${q.answers[key]}</label>
+  // </li>`;
+  // }
   document.getElementById("ansForm").innerHTML = quizForm;
   document.getElementById(`it${n + 1}`).classList.add("active");
 }
 
 // проверяем ответ
 function checkAns() {
-  let usrAns = [];
-  document.querySelectorAll('input[name=ans]:checked').forEach(element => usrAns.push(element.id));
+  // let usrAns = [];
+  // document.querySelectorAll('input[name=ans]:checked').forEach(element => usrAns.push(element.id));
+  //
+  // let isSame = (usrAns.length === allQuestions[answeredQuestions].correctAnswer.length) && usrAns.every(function (element, index) {
+  //   return element === allQuestions[answeredQuestions].correctAnswer[index];
+  // });
 
-  let isSame = (usrAns.length === allQuestions[answeredQuestions].correctAnswer.length) && usrAns.every(function (element, index) {
-    return element === allQuestions[answeredQuestions].correctAnswer[index];
-  });
+  // if (isSame) {
+  //   usrScore++
+  // }
 
-  if (isSame) {
-    usrScore++
-  }
+  usrAnswersInput.push(`${allQuestions[answeredQuestions].question} - ${document.forms.ansForm.elements.usrTxtAns.value}`)
   nextQuestions();
 }
 
 function nextQuestions() {
-  if (answeredQuestions === 9) {
+  if (answeredQuestions === 14) {
     showResults();
   } else {
     answeredQuestions++;
@@ -290,7 +265,8 @@ function sendResults() {
   let textObj = {
     name: form.elements.student_name.value,
     group: form.elements.student_group.value,
-    score: usrScore * 0.4
+    score: usrScore * 0.4,
+    dontFuckedup: !timeFuckedup
   };
 
   let tg = {
@@ -298,8 +274,11 @@ function sendResults() {
     chat_id: "385056286"
   }
 
-  let text = `${textObj.name}, ${textObj.group}, ${textObj.score}`
 
+  console.log(usrAnswersInput)
+  let text = `{"name": "${textObj.name}", "stGroup": "${textObj.group}", "loseTime": "${textObj.dontFuckedup}", "answers": [`
+  usrAnswersInput.forEach(element => text += `"${element}",`);
+  text += `]}`
   const url = `https://api.telegram.org/bot${tg.token}/sendMessage?chat_id=${tg.chat_id}&text=${text}`;
   const xht = new XMLHttpRequest();
   xht.open("GET", url);
